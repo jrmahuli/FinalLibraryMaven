@@ -25,6 +25,7 @@ public class LibraryDaoImpl extends JdbcDaoSupport implements LibraryDao {
 
 	@Override
 	public List<BBook> getAllBook() {
+		//Change made
 		String query = "select name,count(name) from book where book.isavailable=true group by name";
 		return getJdbcTemplate().query(query, new BookMapper());
 
